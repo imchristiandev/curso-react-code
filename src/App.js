@@ -1,5 +1,10 @@
+import React from 'react';
 import logo from './logo.svg';
+import Componente from './components/Componente';
+import Propiedades from './components/Propiedades'
+import Estado from './components/Estado';
 import './App.css';
+import RenderizadoCondicional from './components/RenderizadoCondicional';
 
 function App() {
   return (
@@ -17,6 +22,26 @@ function App() {
         >
           Learn React
         </a>
+        <section>
+          <Componente 
+            message="Hola, soy un Componente funcional expresado desde una prop"
+          />
+          <hr />
+          <Propiedades 
+            cadena="Esto es una cadena de texto"
+            numero={19}
+            booleano={false}
+            arreglo={[1, 2, 3]}
+            objeto={{ nombre: "Christian", correo: "imchristiandev@gmail.com"}}
+            funcion={(num) => num*num}
+            elementoReact={<i>Esto es un elemento React</i>}
+            componenteReact={<Componente message="Soy un componente pasado como Prop"/>}
+          />
+          <hr />
+          <Estado />
+          <hr />
+          <RenderizadoCondicional />
+        </section>
       </header>
     </div>
   );
