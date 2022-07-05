@@ -65,3 +65,35 @@ export class EventosES7 extends Component {
         )
     }
 }
+
+const Boton = ({handleOnClick}) => <button onClick={handleOnClick}>Botón hecho componente</button>
+
+export class MasSobreEventos extends Component {
+    handleClick = (e, mensaje) => {
+        console.log(e);
+        console.log(e.target);
+        console.log(e.nativeEvent);
+        console.log(e.nativeEvent.target);
+        console.log(mensaje);
+    }
+
+    render() {
+        return(
+            <div>
+                <h2>Más sobre eventos</h2>
+                <button onClick={
+                    (e) => this.handleClick(e, "Hola pasando parámetro desde un evento")
+                }>
+                    Saludar
+                </button>
+                {/* Evento personalizado */}
+                {/* <Boton onClick={
+                    (e) => this.handleClick(e, "Hola pasando parámetro desde un evento")
+                } /> */}
+                <Boton handleOnClick={
+                    (e) => this.handleClick(e, "Hola pasando parámetro desde un evento")
+                } />
+            </div>
+        )
+    }
+}
